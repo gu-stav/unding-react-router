@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { Navigate, Form, useLoaderData, useActionData } from 'react-router-dom';
+import { Navigate, Form, useActionData } from 'react-router-dom';
 
-import { useCookie } from "../../hooks/useCookie";
+import { useCookie } from "@/hooks/useCookie";
 
 export function Login() {
     const [ cookie, updateCookie ] = useCookie('token');

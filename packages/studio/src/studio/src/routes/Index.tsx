@@ -1,6 +1,6 @@
-import { Link, Navigate, Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 
-import { useCookie } from "../hooks/useCookie";
+import { useCookie } from "@/hooks/useCookie";
 
 export function Index() {
     const [ cookie, , delCookie ] = useCookie('token');

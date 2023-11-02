@@ -16,5 +16,10 @@
     "@unding/studio": "workspace:^",
     "commander": "^11.1.0"
   },
-  "type": "module"
+  "type": "module",
+  "exports": {
+    "./config": {
+      "import": "./src/exports/config.js"
+    }
+  }
 }
