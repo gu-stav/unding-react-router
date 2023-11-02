@@ -1,8 +1,21 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
+
+import { useCookie } from "../hooks/useCookie";
 
 export function Index() {
+    const [ cookie, , delCookie ] = useCookie('token');
+
+    function deleteCookie() {
+        delCookie('token');
+    }
+
     return <>
-        <h1>App</h1>
-        <Link to="/auth/login">Login</Link>
+        {cookie !== 'set' && <Navigate to="/auth/login" />}
+
+        <button type="button" onClick={deleteCookie}>
+            Logout
+        </button>
+
+        <Outlet />
     </>
 }
