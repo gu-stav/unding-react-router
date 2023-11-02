@@ -10,15 +10,21 @@ importers:
 
   apps/dev:
     dependencies:
+      unding:
+        specifier: workspace:^
+        version: link:../../packages/core
+
+  packages/core:
+    dependencies:
       '@unding/studio':
         specifier: workspace:^
-        version: link:../../packages/studio
-
-  packages/studio:
-    dependencies:
+        version: link:../studio
       commander:
         specifier: ^11.1.0
         version: 11.1.0
+
+  packages/studio:
+    dependencies:
       react:
         specifier: ^18.2.0
         version: 18.2.0
