@@ -1,12 +1,11 @@
 {
-  "name": "ui",
+  "name": "@unding/ui",
   "version": "1.0.0",
   "description": "",
   "scripts": {
     "dev": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build:storybook": "storybook build"
   },
-  "keywords": [],
   "author": "Gustav Hansen <gu@stav.dev>",
   "license": "MIT",
   "devDependencies": {
