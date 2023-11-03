@@ -30,7 +30,7 @@
   },
   "type": "module",
   "exports": {
-    "./config": {
+    ".": {
       "import": "./src/exports/index.js"
     }
   }

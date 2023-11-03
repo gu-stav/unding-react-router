@@ -8,6 +8,10 @@ import {
 import { Index } from "./routes/Index";
 import { Login } from "./routes/auth/Login";
 
+import { Provider as ConfigProvider } from './context/config';
+
+import config from "~unding.config.js";
+
 const router = createBrowserRouter([
     {
       element: <Index />,
@@ -37,4 +41,10 @@ const router = createBrowserRouter([
     },
   ]);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(<RouterProvider router={router} />)
+ReactDOM
+  .createRoot(document.getElementById('root')!)
+  .render(
+    <ConfigProvider value={config}>
+      <RouterProvider router={router} />
+    </ConfigProvider>
+  )

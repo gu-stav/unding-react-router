@@ -7,11 +7,13 @@ import { build as viteBuild, createServer as viteCreateServer } from 'vite';
 import react from "@vitejs/plugin-react-swc";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const cwd = process.cwd();
 
 const commonConfig = {
     resolve: {
         alias: {
-            '@': resolve(__dirname, '..', 'studio', 'src'),
+            '@': fileURLToPath(new URL('../studio/src', import.meta.url)),
+            '~unding.config.js': resolve(cwd, 'unding.config.js'),
         }
     },
     root: join(__dirname, '..', 'studio'),
@@ -36,8 +38,6 @@ async function build({ build: { outDir } }) {
         },
     });
 }
-
-const cwd = process.cwd();
 
 program
   .command('dev')
