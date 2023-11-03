@@ -2,7 +2,7 @@ import { defineConfig } from '@unding/studio';
 
 import { Button } from './components/Button';
 
-const config = {
+export default defineConfig({
     components: {
         Button
     },
@@ -10,6 +10,4 @@ const config = {
 
     ],
     something: true
-};
-
-export default defineConfig(config);
+});
