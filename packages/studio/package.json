@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "bin": {
+    "unding": "./src/exports/cli.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "commander": "^11.1.0",
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -27,5 +28,10 @@
     "typescript": "^5.0.2",
     "vite": "^4.4.5"
   },
-  "type": "module"
+  "type": "module",
+  "exports": {
+    "./config": {
+      "import": "./src/exports/index.js"
+    }
+  }
 }

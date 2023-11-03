@@ -1,4 +1,4 @@
-import { defineConfig } from 'unding/config';
+import { defineConfig } from '@unding/studio';
 
 const config = {
     plugins: [

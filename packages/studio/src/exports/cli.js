@@ -1,4 +1,6 @@
+#!/usr/bin/env node
 
+import { program } from "commander";
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { build as viteBuild, createServer as viteCreateServer } from 'vite';
@@ -9,14 +11,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const commonConfig = {
     resolve: {
         alias: {
-            '@': resolve(__dirname, 'studio', 'src'),
+            '@': resolve(__dirname, '..', 'studio', 'src'),
         }
     },
-    root: join(__dirname, 'studio'),
+    root: join(__dirname, '..', 'studio'),
     plugins: [react()],
 };
 
-export async function dev() {
+async function dev() {
     const server = await viteCreateServer({
         ...commonConfig
     });
@@ -25,7 +27,7 @@ export async function dev() {
     server.printUrls();
 }
 
-export async function build({ build: { outDir } }) {
+async function build({ build: { outDir } }) {
     await viteBuild({
         ...commonConfig,
         build: {
@@ -34,3 +36,23 @@ export async function build({ build: { outDir } }) {
         },
     });
 }
+
+const cwd = process.cwd();
+
+program
+  .command('dev')
+  .action(async () => {
+    await dev();
+  });
+
+program
+  .command('build')
+  .action(async () => {
+    await build({
+      build: {
+        outDir: join(cwd, 'build', 'client'),
+      }
+    });
+  });
+
+program.parse();

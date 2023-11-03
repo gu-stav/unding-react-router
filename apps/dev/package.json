@@ -12,7 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "unding": "workspace:^"
+    "@unding/studio": "workspace:^"
   },
   "type": "module"
 }

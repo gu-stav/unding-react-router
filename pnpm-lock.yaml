@@ -10,21 +10,15 @@ importers:
 
   apps/dev:
     dependencies:
-      unding:
-        specifier: workspace:^
-        version: link:../../packages/core
-
-  packages/core:
-    dependencies:
       '@unding/studio':
         specifier: workspace:^
-        version: link:../studio
-      commander:
-        specifier: ^11.1.0
-        version: 11.1.0
+        version: link:../../packages/studio
 
   packages/studio:
     dependencies:
+      commander:
+        specifier: ^11.1.0
+        version: 11.1.0
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
