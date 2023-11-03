@@ -4,15 +4,16 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "unding build",
-    "dev": "unding dev",
-    "start": "unding start"
+    "build": "vite build",
+    "dev": "vite dev",
+    "preview": "vite preview"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@unding/studio": "workspace:^"
+    "@unding/studio": "workspace:^",
+    "vite": "^4.5.0"
   },
   "type": "module"
 }
