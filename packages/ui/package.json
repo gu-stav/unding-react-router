@@ -1,0 +1,23 @@
+{
+  "name": "ui",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
+  },
+  "keywords": [],
+  "author": "Gustav Hansen <gu@stav.dev>",
+  "license": "MIT",
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.2",
+    "@storybook/addon-links": "^7.5.2",
+    "@storybook/blocks": "^7.5.2",
+    "@storybook/web-components": "^7.5.2",
+    "@storybook/web-components-vite": "^7.5.2",
+    "lit": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^7.5.2"
+  }
+}

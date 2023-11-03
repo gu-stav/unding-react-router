@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "",
   "main": "src/index.js",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Gustav Hansen <gu@stav.dev>",
+  "license": "MIT",
   "dependencies": {
     "js-cookie": "^3.0.5",
     "react": "^18.2.0",
