@@ -21,5 +21,14 @@
   },
   "dependencies": {
     "@lit/react": "^1.0.1"
+  },
+  "exports": {
+    ".": {
+      "import": "./src/components/index.js"
+    },
+
+    "./react": {
+      "import": "./src/react/index.js"
+    }
   }
 }

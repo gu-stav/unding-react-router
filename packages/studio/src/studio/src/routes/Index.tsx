@@ -1,4 +1,5 @@
 import { Navigate, Outlet } from "react-router-dom";
+import { Button } from "@unding/ui/react";
 
 import { useCookie } from "@/hooks/useCookie";
 import { useConfig } from "@/context/config";
@@ -6,7 +7,7 @@ import { useConfig } from "@/context/config";
 export function Index() {
     const [ cookie, , delCookie ] = useCookie('token');
     const config = useConfig();
-    const { Button } = config.components;
+    const { Button: ExtensibleButton } = config.components;
 
     function deleteCookie() {
         delCookie('token');
@@ -21,7 +22,11 @@ export function Index() {
             Logout
         </button>
 
-        <Button type="button" renderDefault={(props) => <button {...props}>Default Button</button>} />
+        <ExtensibleButton type="button" renderDefault={(props) => <button {...props}>Default Button</button>} />
+
+        <Button>
+            my first lit component in react
+        </Button>
 
         <Outlet />
     </>

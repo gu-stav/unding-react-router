@@ -19,6 +19,9 @@ importers:
 
   packages/studio:
     dependencies:
+      '@unding/ui':
+        specifier: workspace:^
+        version: link:../ui
       js-cookie:
         specifier: ^3.0.5
         version: 3.0.5
