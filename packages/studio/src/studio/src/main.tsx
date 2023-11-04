@@ -62,6 +62,8 @@ ReactDOM
   .createRoot(document.getElementById('root')!)
   .render(
     <ConfigProvider value={config}>
-      <RouterProvider router={router} />
+      <React.Suspense fallback={<div>Loading...</div>}>
+        <RouterProvider router={router} />
+      </React.Suspense>
     </ConfigProvider>
   )
