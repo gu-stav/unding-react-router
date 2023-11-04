@@ -1,0 +1,11 @@
+{
+  "name": "@unding/content",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "author": "Gustav Hansen <gu@stav.dev>",
+  "license": "MIT",
+  "dependencies": {
+    "@unding/studio": "workspace:^"
+  }
+}
