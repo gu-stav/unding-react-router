@@ -1,7 +1,7 @@
 import React from 'react';
 import { definePlugin } from "@unding/studio";
 
-import { Index } from './routes/Index';
+const Index = React.lazy(() => import('./routes/Index').then((module) => ({ default: module.Index })));
 
 export default definePlugin({
     name: '@unding/content',
