@@ -2,6 +2,11 @@ import { z } from "zod";
 
 const pluginSchema = z.object({
     name: z.string(),
+
+    routes: z.function(z.object({
+        path: z.string(),
+        element: z.function(),
+    })).optional(),
 });
 
 const userSchema = z.object({

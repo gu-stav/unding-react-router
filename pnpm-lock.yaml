@@ -25,6 +25,12 @@ importers:
       '@unding/studio':
         specifier: workspace:^
         version: link:../studio
+      react:
+        specifier: ^18.2.0
+        version: 18.2.0
+      react-dom:
+        specifier: ^18.2.0
+        version: 18.2.0(react@18.2.0)
 
   packages/studio:
     dependencies:

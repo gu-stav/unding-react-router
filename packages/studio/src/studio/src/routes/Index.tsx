@@ -1,4 +1,4 @@
-import { Navigate, Outlet } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import { Button } from "@unding/ui/react";
 
 import { useCookie } from "@/hooks/useCookie";
@@ -17,6 +17,16 @@ export function Index() {
 
     return <>
         {cookie !== 'set' && <Navigate to="/auth/login" />}
+
+        <nav>
+            {config.plugins.map((plugin) => {
+
+                return <Link to={`/${plugin.slug}`}>
+                    {plugin.name}
+                </Link>;
+            })
+            }
+        </nav>
 
         <button type="button" onClick={deleteCookie}>
             Logout

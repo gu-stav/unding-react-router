@@ -2,10 +2,12 @@
   "name": "@unding/content",
   "version": "1.0.0",
   "description": "",
-  "main": "src/index.js",
+  "main": "src/index.tsx",
   "author": "Gustav Hansen <gu@stav.dev>",
   "license": "MIT",
   "dependencies": {
-    "@unding/studio": "workspace:^"
+    "@unding/studio": "workspace:^",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
