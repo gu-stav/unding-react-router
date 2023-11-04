@@ -16,10 +16,15 @@ const Login = React.lazy(() => import('./routes/auth/Login').then((module) => ({
 const PLUGIN_ROUTES = config.plugins.flatMap((plugin) => {
   const routes = plugin?.routes();
 
-  return routes.map((route) => ({
-    ...route,
-    path: `/${plugin.slug}/${route.path}`
-  }))
+  return routes.map((route) => {
+    const Component = React.lazy(() => route.element());
+
+    return {
+      ...route,
+      element: <Component />,
+      path: `/${plugin.slug}/${route.path}`
+    }
+  })
 });
 
 const router = createBrowserRouter([
