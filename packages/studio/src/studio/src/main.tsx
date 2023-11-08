@@ -2,6 +2,7 @@ import * as React from 'react';
 import ReactDOM from 'react-dom/client';
 import {
     createBrowserRouter,
+    redirect,
     RouterProvider,
     json
 } from "react-router-dom";
@@ -11,25 +12,32 @@ import { Provider as ConfigProvider } from './context/config';
 import config from "~unding.config.js";
 
 const Index = React.lazy(() => import('./routes/Index').then((module) => ({ default: module.Index })));
+const Plugin = React.lazy(() => import('./routes/:plugin/Index').then((module) => ({ default: module.Plugin })));
 const Login = React.lazy(() => import('./routes/auth/Login').then((module) => ({ default: module.Login })));
 
 const PLUGIN_ROUTES = config.plugins.flatMap((plugin) => {
   const routes = plugin?.routes();
 
-  return routes.map((route) => {
-    const Component = React.lazy(() => route.element());
+  return {
+    element: <Plugin />,
+    path: `/${plugin.slug}`,
+    children: routes.map((route) => {
+      const Component = React.lazy(() => route.element());
 
-    return {
-      ...route,
-      element: <Component />,
-      path: `/${plugin.slug}/${route.path}`
-    }
-  })
+      return {
+        ...route,
+        element: <Component />,
+        path: `/${plugin.slug}/${route.path}`
+      }
+    })
+  }
 });
 
 const router = createBrowserRouter([
   {
-    element: <Index />,
+    loader() {
+      return redirect(PLUGIN_ROUTES[0].path);
+    },
     path: "/",
   },
 
