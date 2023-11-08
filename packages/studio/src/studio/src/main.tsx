@@ -11,7 +11,6 @@ import { Provider as ConfigProvider } from './context/config';
 
 import config from "~unding.config.js";
 
-const Index = React.lazy(() => import('./routes/Index').then((module) => ({ default: module.Index })));
 const Plugin = React.lazy(() => import('./routes/:plugin/Index').then((module) => ({ default: module.Plugin })));
 const Login = React.lazy(() => import('./routes/auth/Login').then((module) => ({ default: module.Login })));
 
