@@ -6,6 +6,7 @@ import {
     RouterProvider,
     json
 } from "react-router-dom";
+import { z } from "zod";
 
 import { Provider as ConfigProvider } from './context/config';
 
@@ -14,8 +15,18 @@ import config from "~unding.config.js";
 const Plugin = React.lazy(() => import('./routes/:plugin/Index').then((module) => ({ default: module.Plugin })));
 const Login = React.lazy(() => import('./routes/auth/Login').then((module) => ({ default: module.Login })));
 
+const PLUGIN_ROUTE_SCHEMA = z.array(z.object({
+  element: z.function(),
+  path: z.string()
+}));
+
 const PLUGIN_ROUTES = config.plugins.flatMap((plugin) => {
   const routes = plugin?.routes();
+  const result = PLUGIN_ROUTE_SCHEMA.safeParse(routes);
+
+  if (!result.success) {
+    throw new Error(result.error.message);
+  }
 
   return {
     element: <Plugin />,
