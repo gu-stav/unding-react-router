@@ -3,5 +3,8 @@
   "private": true,
   "author": "Gustav Hansen <gu@stav.dev>",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm run --parallel -r dev"
+  }
 }
