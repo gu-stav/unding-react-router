@@ -7,16 +7,19 @@
   "scripts": {
     "dev": "pnpm run --parallel -r dev",
     "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint:fix": "eslint --fix --ext .js,.jsx,.tsx,.ts .",
     "prettier": "prettier . --write",
     "prepare": "husky install"
   },
   "devDependencies": {
-    "eslint": "^8.45.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.52.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-react": "^7.33.2",
     "husky": "^8.0.3",
-    "lint-staged": "^15.0.2"
+    "lint-staged": "^15.0.2",
+    "typescript": "^5.0.2"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md}": "pnpm lint:fix"

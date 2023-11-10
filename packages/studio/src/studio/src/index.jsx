@@ -63,13 +63,12 @@ export function Studio({ config }) {
         {
           element: <Login />,
           path: "login",
-          // eslint-disable-next-line no-unused-vars
+          // eslint-disable-next-line @typescript-eslint/no-unused-vars
           action: async ({ params, request }) => {
             let formData = await request.formData();
 
             if (
-              formData.get("email") === "valid" &&
-              formData.get("password") === "valid"
+              formData.get("email") === "valid" && formData.get("password") === "valid"
             ) {
               return { ok: true };
             }

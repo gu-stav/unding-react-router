@@ -7,10 +7,6 @@ export function Login() {
   const [cookie, updateCookie] = useCookie("token");
   const data = useActionData();
 
-  function setCookie() {
-    updateCookie("set");
-  }
-
   React.useEffect(() => {
     if (data?.ok) {
       updateCookie("set");

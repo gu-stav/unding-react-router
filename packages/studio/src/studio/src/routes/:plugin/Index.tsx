@@ -1,3 +1,4 @@
+import * as React from "react";
 import { Link, Navigate, Outlet } from "react-router-dom";
 
 import { useCookie } from "@/hooks/useCookie";
@@ -17,7 +18,7 @@ export function Plugin() {
 
       <nav>
         {config.plugins.map((plugin) => (
-          <Link to={`/${plugin.slug}`}>{plugin.name}</Link>
+          <Link key={plugin.slug} to={`/${plugin.slug}`}>{plugin.name}</Link>
         ))}
       </nav>
 
