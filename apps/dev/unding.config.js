@@ -1,18 +1,18 @@
-import { defineConfig } from '@unding/studio';
-import content from '@unding/content';
+import { defineConfig } from "@unding/studio";
+import content from "@unding/content";
 
-import { Button } from './components/Button';
+import { Button } from "./components/Button";
 
 export default defineConfig({
-    baseUrl: '/dev',
+  baseUrl: "/dev",
 
-    components: {
-        Button
-    },
+  components: {
+    Button,
+  },
 
-    plugins: [
-        content({
-            something: true
-        })
-    ],
+  plugins: [
+    content({
+      something: true,
+    }),
+  ],
 });

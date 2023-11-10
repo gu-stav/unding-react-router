@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export function DocumentForm() {
-    return <div>
-        Hello from document view
-    </div>
+  return <div>Hello from document view</div>;
 }

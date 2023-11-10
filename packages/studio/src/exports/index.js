@@ -1,3 +1,3 @@
-export * from './config';
-export * from './plugin';
-export * from './studio';
+export * from "./config";
+export * from "./plugin";
+export * from "./studio";

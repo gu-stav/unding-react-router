@@ -5,6 +5,16 @@
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "dev": "pnpm run --parallel -r dev"
+    "dev": "pnpm run --parallel -r dev",
+    "prettier": "prettier . --write",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.2",
+    "prettier": "^3.0.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": "pnpm prettier"
   }
 }

@@ -1,9 +1,9 @@
-import { html } from 'lit';
+import { html } from "lit";
 
-import './u-button';
+import "./u-button";
 
 export default {
-  title: 'u-button',
+  title: "u-button",
   render: () => html`<u-button>test</u-button>`,
 };
 

@@ -1,7 +1,5 @@
-import React from 'react';
+import React from "react";
 
 export function Index() {
-    return <div>
-        Hello from content
-    </div>
+  return <div>Hello from content</div>;
 }

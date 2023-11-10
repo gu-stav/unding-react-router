@@ -26,7 +26,6 @@
     ".": {
       "import": "./src/components/index.js"
     },
-
     "./react": {
       "import": "./src/react/index.js"
     }
